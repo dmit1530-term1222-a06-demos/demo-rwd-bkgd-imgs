@@ -118,11 +118,77 @@ nav li {
     background: url('../img/cards/exterior-entry.webp') center / cover no-repeat;
 }
 
+.card:nth-of-type(2) .card-bg {
+    background: url('../img/cards/interior-desk.webp') center / cover no-repeat;
+}
 
+.card:nth-of-type(3) .card-bg {
+    background: url('../img/cards/kitchen-trinkets.webp') center / cover no-repeat;
+}
 
+.card .card-desc {
+    padding: 1rem;
+}
 
 /* Footer Styles */
 
+footer {
+    margin-top: 5rem;
+}
+footer .footer-bkgd {
+    background-image: url('../img/leaf.svg');
+    background-color: var(--mauve);
+    padding: 2rem 1rem;
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+
+.copyright {
+    background-color: var(--dk-navy);
+    padding: 1rem;
+    text-align: center;
+    color: var(--lt-pink);
+}
 
 /* Media Queries */
+
+@media screen and (min-width: 860px) {
+    .flex {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer .flex {
+        justify-content: flex-start;
+        gap: 2rem; /** applies to both row and column **/
+    }
+
+    /* 
+    footer .footer-links {
+        margin-right: 2rem;
+    } */
+
+    .hero-bkgd {
+        background: url(../img/bg/outdoor-wide.webp) center / cover no-repeat;
+        height: calc(100vh - 8.75rem);
+    }
+
+    .hero-bkgd h2 { font-size: 3rem; }
+    .hero-bkgd p { font-size: 2.2rem; }
+
+    /** each is a flex-item **/
+    .card {
+        margin: unset; /** removing the margin, cause we don't need anymore **/
+        width: calc(100% / 3 - 0.5rem);
+        /** we're also going to switch uo the order of some  of the elements within the card */
+        display: flex;
+        flex-direction: column;
+    }
+    .card-bg {
+        order: -1;
+    }
+    .card .card-desc {
+        padding-top: 0;
+    }
+}
 
